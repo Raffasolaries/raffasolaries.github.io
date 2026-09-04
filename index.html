@@ -78,7 +78,7 @@
   .mast h1{
     font:700 26pt/1.05 var(--serif); letter-spacing:-.01em; margin:0 0 3pt; color:var(--ink);
   }
-  .mast .title{font:500 11pt/1.3 var(--sans); color:var(--accent); margin:0 0 3pt}
+  .mast .title{font:500 10.4pt/1.3 var(--sans); color:var(--accent); margin:0 0 3pt}
   .mast .sub{font-size:9.2pt; color:var(--ink-3); margin:0}
   .mast .contact{
     text-align:right; font-size:8.9pt; line-height:1.55; color:var(--ink-2); white-space:nowrap;
@@ -108,6 +108,9 @@
   }
   .cert i.assoc{background:#5c8fbf}
   .cert i.found{background:#9db8d4}
+  .cert a, .edu a, .job .meta a, .proj .client a{color:inherit; border-bottom:1px dotted var(--rule)}
+  .cert a:hover, .edu a:hover, .job .meta a:hover, .proj .client a:hover{color:var(--accent); text-decoration:none; border-bottom-color:var(--accent)}
+  .cert small{display:block; font-size:7.6pt; color:var(--ink-3)}
   .edu{margin:0 0 6pt}
   .edu b{display:block; font-weight:600; color:var(--ink)}
   .edu em{display:block; font-style:normal; color:var(--ink-2)}
@@ -116,12 +119,12 @@
   .lang span:last-child{color:var(--ink-3)}
 
   /* --- Main column --- */
-  main{padding:8mm var(--pad) var(--pad) 9mm}
+  main{padding:7mm 14mm 12mm 9mm}
   main h2{
     font:600 8pt/1 var(--sans); letter-spacing:.14em; text-transform:uppercase;
     color:var(--accent); margin:0 0 8pt; padding-bottom:4pt; border-bottom:1px solid var(--rule);
   }
-  main section{margin-bottom:8mm}
+  main section{margin-bottom:7mm}
   main section:last-child{margin-bottom:0}
   .summary{font-size:10.2pt; line-height:1.55; color:var(--ink-2)}
   .summary strong{color:var(--ink); font-weight:600}
@@ -133,7 +136,7 @@
   .job .meta{font-size:9pt; color:var(--ink-2); margin:0 0 3pt}
   .job .meta b{font-weight:500; color:var(--ink)}
   .job .when{flex:none; font-size:8.8pt; color:var(--ink-3); text-align:right; line-height:1.3}
-  .job ul{font-size:9.5pt; color:var(--ink-2)}
+  .job ul{font-size:9.3pt; color:var(--ink-2)}
   .job .stack{font-size:8.4pt; color:var(--ink-3); margin:3pt 0 0; line-height:1.4}
   .job .stack b{color:var(--ink-2); font-weight:500}
 
@@ -143,11 +146,13 @@
   .proj h3{font:600 9.9pt/1.3 var(--sans); margin:0}
   .proj .client{font-size:8.8pt; color:var(--accent); margin:0 0 2pt}
   .proj .when{flex:none; font-size:8.6pt; color:var(--ink-3)}
-  .proj p{font-size:9.3pt; color:var(--ink-2); margin:0; line-height:1.5}
+  .proj p{font-size:9.1pt; color:var(--ink-2); margin:0; line-height:1.45}
 
   .compact{font-size:9.2pt; color:var(--ink-2)}
   .compact li{margin-bottom:2pt}
   .compact b{color:var(--ink); font-weight:600}
+  .compact b a{color:inherit; border-bottom:1px dotted var(--rule)}
+  .compact b a:hover{color:var(--accent); text-decoration:none}
   .compact .when{color:var(--ink-3); font-size:8.5pt}
 
   .refs{font-size:9pt; color:var(--ink-2)}
@@ -181,8 +186,9 @@
     /* keep sidebar background through page breaks */
     aside{background:var(--side-bg)}
     .mast{padding-top:14mm}
-    a{color:inherit}
+    a{color:inherit; border-bottom:none !important}
     .mast .contact a{color:var(--ink-2)}
+    .cert small{display:block}
     .job, .proj, .edu, .cert, .skillgroup{break-inside:avoid; page-break-inside:avoid}
     h2, h3{break-after:avoid; page-break-after:avoid}
     main section, aside section{break-inside:auto}
@@ -211,7 +217,7 @@
       <p class="sub">Tavira, Portugal &nbsp;·&nbsp; Remote / EU-wide engagements &nbsp;·&nbsp; Italian citizen</p>
     </div>
     <div class="contact">
-      <a href="mailto:raffasolaries@gmail.com">raffasolaries@gmail.com</a><br />
+      <a href="mailto:raffaele.sollecito@aspectsolutions.eu">raffaele.sollecito@aspectsolutions.eu</a><br />
       <a href="https://www.linkedin.com/in/raffasolaries" rel="me noopener">linkedin.com/in/raffasolaries</a><br />
       <a href="https://github.com/Raffasolaries" rel="me noopener">github.com/Raffasolaries</a><br />
       <a href="https://www.raffaelesollecito.org" rel="me noopener">raffaelesollecito.org</a>
@@ -223,12 +229,13 @@
 
     <section>
       <h2>Certifications</h2>
-      <div class="cert"><i></i><span>AWS Certified Solutions Architect – Professional</span></div>
-      <div class="cert"><i></i><span>AWS Certified Security – Specialty</span></div>
-      <div class="cert"><i class="assoc"></i><span>AWS Certified Solutions Architect – Associate</span></div>
-      <div class="cert"><i class="assoc"></i><span>AWS Certification Subject Matter Expert – Associate</span></div>
-      <div class="cert"><i class="assoc"></i><span>AWS Partner: Technical Accredited</span></div>
-      <div class="cert"><i class="found"></i><span>AWS Certified Cloud Practitioner</span></div>
+      <div class="cert"><i></i><span><a href="https://www.credly.com/badges/1bf12aa4-d1ad-4178-96f9-b15bee1f7fde" rel="noopener">AWS Certified Solutions Architect – Professional</a></span></div>
+      <div class="cert"><i></i><span><a href="https://www.credly.com/badges/20256e01-69c8-48f0-b139-e3468b9f5837" rel="noopener">AWS Certified Security – Specialty</a></span></div>
+      <div class="cert"><i class="assoc"></i><span><a href="https://www.credly.com/badges/d2bcc5cd-06d7-431c-b96b-88027da8fdef" rel="noopener">AWS Certified Solutions Architect – Associate</a></span></div>
+      <div class="cert"><i class="assoc"></i><span><a href="https://www.credly.com/badges/84f7bf87-5948-4b0e-8afe-3f5193d85883" rel="noopener">AWS Certification Subject Matter Expert – Associate</a></span></div>
+      <div class="cert"><i class="assoc"></i><span><a href="https://www.credly.com/badges/5c9c82af-b374-4e72-971f-a9e576007cca" rel="noopener">AWS Partner: Technical Accredited</a></span></div>
+      <div class="cert"><i class="found"></i><span><a href="https://www.credly.com/badges/a93d8bd5-9e9d-4aa6-98c3-fe49592ac2da" rel="noopener">AWS Certified Cloud Practitioner</a></span></div>
+      <div class="cert" style="margin-top:5pt"><span style="font-size:7.8pt;color:var(--ink-3)">All badges verifiable on Credly — <a href="https://www.credly.com/users/raffasolaries" rel="noopener">credly.com/users/raffasolaries</a></span></div>
     </section>
 
     <section>
@@ -238,7 +245,7 @@
       <div class="skillgroup"><b>Identity</b>
         <span>SAML 2.0 · OpenID Connect · Federation with Entra ID &amp; Google Workspace · Cognito OAuth 2.0</span></div>
       <div class="skillgroup"><b>Networking &amp; Security</b>
-        <span>Transit Gateway · Cloud WAN · Direct Connect · Site-to-site VPN · Hub-and-spoke VPC · Network Firewall &amp; Suricata · WAFv2 · KMS · Route 53 hybrid DNS</span></div>
+        <span>Transit Gateway · Cloud WAN · Direct Connect · Site-to-site VPN · Hub-and-spoke VPC · Network Firewall &amp; Suricata · CloudFront edge · AWS WAFv2 · KMS · Secrets Manager · Route 53 hybrid DNS</span></div>
       <div class="skillgroup"><b>Infrastructure as Code</b>
         <span>CloudFormation &amp; StackSets · AWS CDK · Terraform · Copilot CLI</span></div>
       <div class="skillgroup"><b>Containers &amp; Compute</b>
@@ -246,9 +253,11 @@
       <div class="skillgroup"><b>CI/CD</b>
         <span>GitLab CI · GitHub Actions · Bitbucket · AWS CodeCatalyst · OIDC credential-less pipelines</span></div>
       <div class="skillgroup"><b>Data &amp; APIs</b>
-        <span>AppSync GraphQL · API Gateway · RDS PostgreSQL · DocumentDB · DynamoDB · OpenSearch · ElastiCache</span></div>
+        <span>AppSync GraphQL · API Gateway · Amazon Aurora · RDS PostgreSQL · DocumentDB · DynamoDB · OpenSearch · ElastiCache / Valkey · Amazon MQ (RabbitMQ)</span></div>
       <div class="skillgroup"><b>Resilience &amp; Observability</b>
-        <span>AWS Backup · cross-region DR · CloudWatch · Managed Grafana · Sentry</span></div>
+        <span>Multi-region disaster recovery · AWS Backup · cross-region replication · CloudWatch · Managed Grafana · Sentry</span></div>
+      <div class="skillgroup"><b>Delivery Governance</b>
+        <span>ServiceNow change management · peer-reviewed PRs · plan-gated CI · design docs as code</span></div>
       <div class="skillgroup"><b>Platforms &amp; Languages</b>
         <span>Azure · Linux · Docker · Python · TypeScript/Node.js · PHP · SQL</span></div>
     </section>
@@ -257,13 +266,13 @@
       <h2>Education</h2>
       <div class="edu">
         <b>MSc Software Engineering — Visual Computing</b>
-        <em>Università degli Studi di Verona</em>
-        <small>LM-32 Ingegneria Informatica · 2008 – 2014</small>
+        <em><a href="https://www.di.univr.it/" rel="noopener">Università degli Studi di Verona</a></em>
+        <small><a href="https://www2.almalaurea.it/cgi-asp/classi/Scheda.aspx?codiceAggr=11035&amp;tipoCorso=LM&amp;lang=it" rel="noopener">LM-32 Ingegneria Informatica</a> · 2008 – 2014</small>
       </div>
       <div class="edu">
         <b>BSc Computer Science</b>
-        <em>Università degli Studi di Perugia</em>
-        <small>L-26 Scienze e Tecnologie Informatiche · 2004 – 2008</small>
+        <em><a href="https://www.dmi.unipg.it/didattica/corsi-di-studio-in-informatica/informatica-triennale" rel="noopener">Università degli Studi di Perugia</a></em>
+        <small><a href="https://www2.almalaurea.it/cgi-asp/classi/Scheda.aspx?codiceAggr=10026&amp;tipoCorso=L&amp;lang=it" rel="noopener">L-26 Scienze e Tecnologie Informatiche</a> · 2004 – 2008</small>
       </div>
       <div class="edu">
         <b>State Qualification, Software Engineering</b>
@@ -292,7 +301,7 @@
         <strong>six AWS certifications</strong> including Solutions Architect Professional and Security Specialty.
         I design and deliver multi-account landing zones, zero-trust identity and network perimeters, and
         production container platforms for regulated and enterprise clients — a European institution, Volkswagen,
-        fintech, public-sector utilities and IoT. Independent since 2025 through Aspect Solutions.
+        global mobile gaming, fintech, public-sector utilities and IoT. Independent since 2025 through Aspect Solutions.
       </p>
     </section>
 
@@ -304,9 +313,9 @@
           <h3>Principal Cloud Solutions Architect &amp; Founder</h3>
           <div class="when">Jan 2025 – present<br />Remote</div>
         </header>
-        <p class="meta"><b>Aspect Solutions, Unipessoal Lda</b> · Independent consultancy</p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/aspect-solutions-innovate/" rel="noopener">Aspect Solutions, Unipessoal Lda</a></b> · Independent consultancy</p>
         <ul>
-          <li>Enterprise AWS and Azure architecture, security and DevOps for international clients in fintech, automotive, cybersecurity and IoT — see Selected Engagements below.</li>
+          <li>Enterprise AWS and Azure architecture, security and DevOps for international clients in gaming, fintech, automotive, cybersecurity and IoT — see Selected Engagements below.</li>
         </ul>
       </article>
 
@@ -315,7 +324,7 @@
           <h3>Cloud Architect</h3>
           <div class="when">Sep 2023 – Jan 2024<br />Remote</div>
         </header>
-        <p class="meta"><b>PwC Luxembourg</b> · Contractor for a European Institution</p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/pwc-luxembourg/" rel="noopener">PwC Luxembourg</a></b> · Contractor for a European Institution</p>
         <ul>
           <li>Designed the institution-wide centralised backup strategy on AWS Backup, aligned to the AWS Data Protection Reference Architecture.</li>
           <li>Rolled out automated EC2 patching and org-wide CloudFormation StackSets.</li>
@@ -330,7 +339,7 @@
           <h3>Cloud Solutions Architect</h3>
           <div class="when">Feb 2023 – Jun 2023<br />Lisbon, Portugal</div>
         </header>
-        <p class="meta"><b>Volkswagen Digital Solutions</b></p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/volkswagen-digital-solutions/" rel="noopener">Volkswagen Digital Solutions</a></b></p>
         <ul>
           <li>Delivered secure AWS accounts inside the MAN-compliant Group landing zone; automated provisioning with Step Functions.</li>
           <li>Event-driven architecture with CDK and StackSets; cross-account roles and trust policies; Route 53 hybrid resolver shared via RAM.</li>
@@ -345,7 +354,7 @@
           <h3>Solutions Architect</h3>
           <div class="when">Oct 2021 – Feb 2023<br />Assago, Italy</div>
         </header>
-        <p class="meta"><b>ITnet Srl</b></p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/itnet-srl/" rel="noopener">ITnet Srl</a></b></p>
         <ul>
           <li>Guided mid-market and enterprise clients through cloud adoption and hybrid operations; designed Control Tower landing zones with IAM integration.</li>
           <li>Led post-disaster-recovery infrastructure redesign.</li>
@@ -360,7 +369,7 @@
           <h3>AWS DevOps Engineer</h3>
           <div class="when">Jun 2019 – Oct 2021<br />Milan, Italy</div>
         </header>
-        <p class="meta"><b>Tantosvago Società Benefit</b></p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/tantosvago/" rel="noopener">Tantosvago Società Benefit</a></b></p>
         <ul>
           <li>Introduced Git Flow; built CI/CD for ECS workloads and CloudFront + S3 static sites.</li>
           <li>Integrated partner REST APIs with mTLS via API Gateway Lambda proxy; custom SSO with Lambda authorizer, ElastiCache and DynamoDB.</li>
@@ -374,7 +383,7 @@
           <h3>Full Stack Engineer</h3>
           <div class="when">Apr 2018 – Dec 2018<br />Milan, Italy</div>
         </header>
-        <p class="meta"><b>Key Partner Digital</b></p>
+        <p class="meta"><b><a href="https://www.linkedin.com/company/keypartnerdigital/" rel="noopener">Key Partner Digital</a></b></p>
         <ul>
           <li>Led a multi-platform chatbot framework on AWS Lex and Claudia.js; Angular 2+ front-ends.</li>
         </ul>
@@ -397,7 +406,7 @@
           <h3>Full Stack Engineer</h3>
           <div class="when">Jan 2015 – Jun 2015<br />Remote</div>
         </header>
-        <p class="meta"><b>Francesco Lombardo</b></p>
+        <p class="meta"><b><a href="https://www.francescolombardo.it/" rel="noopener">Francesco Lombardo</a></b></p>
         <ul><li>Forex web platform in PHP / CodeIgniter, MySQL and JavaScript.</li></ul>
       </article>
     </section>
@@ -406,26 +415,32 @@
       <h2>Selected Engagements</h2>
 
       <article class="proj">
+        <header><h3>Multi-Account AWS Platform Engineering &amp; Cloud Migration — Global Mobile Gaming</h3><span class="when">Apr 2026 – present</span></header>
+        <p class="client"><a href="https://www.linkedin.com/company/conclusion/" rel="noopener">Conclusion</a> — delivery partner to <a href="https://www.linkedin.com/company/miniclip/" rel="noopener">Miniclip</a></p>
+        <p>Principal architect on the Conclusion delivery team, owning the shared Terraform platform that provisions production AWS infrastructure across multiple game titles and environments. Led the migration of production traffic from Cloudflare to an AWS-native edge on CloudFront and WAFv2 — seven zones across three games, no player-facing downtime. Designed the multi-region DR strategy for EKS, Aurora, ElastiCache/Valkey and CI/CD build infrastructure, consolidated into one parameter-driven orchestration workflow (repair, full recovery, cleanup), plus centralised backup with cross-region replication and standardised tagging and IAM policy enforcement. Defined ownership boundaries and least-privilege cross-account patterns for safe co-tenancy with the client's internal platform teams. All changes delivered through ServiceNow change management, peer-reviewed PRs, plan-gated CI and version-controlled design docs; ran CloudFront/WAF enablement workshops for the wider engineering organisation.</p>
+      </article>
+
+      <article class="proj">
         <header><h3>Self-Managed GitLab Platform &amp; Enterprise Wiki Migration</h3><span class="when">Jul 2025 – present</span></header>
-        <p class="client">u-blox AG — IoT positioning &amp; wireless</p>
+        <p class="client"><a href="https://www.linkedin.com/company/u-blox/" rel="noopener">u-blox AG</a> — IoT positioning &amp; wireless</p>
         <p>Architected a highly available self-managed GitLab on AWS via CloudFormation for 500+ users, federated with Entra ID SSO. Migrated repositories from GitHub.com and legacy SVN with full history. In a five-person team, re-architected the company-wide wiki on AWS serverless for global distribution and cost efficiency.</p>
       </article>
 
       <article class="proj">
         <header><h3>Multi-Account Platform &amp; Real-Time Financial Data Infrastructure</h3><span class="when">Aug 2023 – present</span></header>
-        <p class="client">UCapital24 — fintech</p>
+        <p class="client"><a href="https://www.linkedin.com/company/ucapital24/" rel="noopener">UCapital24</a> — fintech</p>
         <p>Control Tower landing zone with Security Hub and SAML SSO from Google Workspace to IAM Identity Center; GitLab OIDC federation for credential-less CI/CD. ECS microservices (CloudFormation + Copilot) streaming market data over WebSockets; CloudFront/S3/Cognito front-end via Terraform; AppSync GraphQL; Managed Grafana with GitOps dashboards; SharedServices account with cross-account least privilege; OpenSearch, DocumentDB and RDS PostgreSQL.</p>
       </article>
 
       <article class="proj">
         <header><h3>Landing Zone &amp; Multi-Tenant Kubernetes Platform — Public-Sector Gas Distribution</h3><span class="when">Jan 2024 – Dec 2025</span></header>
-        <p class="client">ReeVo Cloud &amp; Cyber Security</p>
+        <p class="client"><a href="https://www.linkedin.com/company/reevo-cloud/" rel="noopener">ReeVo Cloud &amp; Cyber Security</a> — public-sector gas distribution end client</p>
         <p>Control Tower + Security Hub + IAM Identity Center federated with Entra ID; hub-and-spoke Transit Gateway with Direct Connect and VPN failover; Network Firewall with Suricata rule sets. Multi-tenant EKS with namespace isolation, ArgoCD GitOps, Karpenter and NGINX ingress. Terraform observability modules across RDS, DocumentDB, ECS/EKS, CloudFront, WAFv2 and ALB/NLB. Private NLB → API Gateway → CloudFront delivery with WAF, Cognito OAuth 2.0 and KMS; CI/CD on CodeCatalyst.</p>
       </article>
 
       <article class="proj">
         <header><h3>AWS Infrastructure Modernisation — Connected Vehicle Platform</h3><span class="when">Jan 2025 – Feb 2025</span></header>
-        <p class="client">AWAKE Mobility — automotive IoT</p>
+        <p class="client"><a href="https://www.linkedin.com/company/awakemobility/" rel="noopener">AWAKE Mobility</a> — automotive IoT</p>
         <p>Prod/Dev/QA multi-account architecture aligned to the Well-Architected Framework; Entra ID SSO with least-privilege permission sets; VPC segmentation and Network Firewall; Bitbucket ↔ IAM Identity Center credential-free CI/CD; AWS Backup with cross-region replication; CloudWatch, Uptime Kuma and Sentry monitoring; CloudFormation and Terraform IaC; SNS/SQS/Lambda event-driven guidance.</p>
       </article>
     </section>
@@ -442,7 +457,13 @@
 
     <section>
       <h2>References</h2>
-      <p class="refs">Available on request from senior stakeholders at PwC Luxembourg, Volkswagen Digital Solutions, ReeVo S.p.A., AWAKE Mobility and Tantosvago.</p>
+      <ul class="compact refs">
+        <li><b><a href="https://www.linkedin.com/in/tfonseca/" rel="noopener">Tiago Fonseca</a></b> — CTO &amp; Tech/Product Leader, AWAKE Mobility</li>
+        <li><b><a href="https://www.linkedin.com/in/quentin-bechoux-b064536/" rel="noopener">Quentin Bechoux</a></b> — Senior Manager, PwC Luxembourg</li>
+        <li><b><a href="https://www.linkedin.com/in/stefan-daniel-strehlow-484999141/" rel="noopener">Stefan Daniel Strehlow</a></b> — Senior Engineering Manager, Volkswagen Digital Solutions</li>
+        <li><b><a href="https://www.linkedin.com/in/lucaorabona/" rel="noopener">Luca Orabona</a></b> — Chief Cloud Operating Officer, ReeVo S.p.A.</li>
+        <li><b><a href="https://www.linkedin.com/in/michele-cortellini/" rel="noopener">Michele Cortellini</a></b> — General Manager &amp; Co-Founder, Tantosvago</li>
+      </ul>
     </section>
 
   </main>
