@@ -96,11 +96,11 @@
      Design tokens
      ============================================================ */
   :root{
-    --paper:#ffffff; --bg:#e9ecef;
+    --paper:#ffffff; --bg:#efece5;
     --ink:#161a1f; --ink-2:#3d444d; --ink-3:#6b7480;
     --rule:#d5dae0; --rule-soft:#e8ebef;
-    --accent:#0f4c81; --accent-soft:#e6eef6;
-    --side-bg:#f4f6f8;
+    --accent:#243c8f; --accent-soft:#e8ecf8; --seal:#c5311d;
+    --side-bg:#f5f3ee;
     --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
     --sans:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --page-w:210mm; --pad:16mm; --side-w:62mm;
@@ -152,7 +152,19 @@
     grid-column:1 / -1; padding:var(--pad) var(--pad) 9mm;
     border-bottom:2.2pt solid var(--accent);
     display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
+    position:relative; overflow:hidden;
   }
+  /* Faint mandala watermark — screen only, never printed */
+  .mast::before{
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:url("mandala.svg") no-repeat; background-size:760px 760px;
+    background-position:calc(100% + 240px) -330px; opacity:.085;
+    -webkit-mask-image:radial-gradient(closest-side at 90% 10%, #000 30%, transparent 100%);
+    mask-image:radial-gradient(closest-side at 90% 10%, #000 30%, transparent 100%);
+  }
+  .mast > *{position:relative; z-index:1}
+  .mast .who{display:flex; align-items:flex-start; gap:12px}
+  .seal{flex:none; width:38px; height:38px; margin-top:2px}
   .mast h1{
     font:700 26pt/1.05 var(--serif); letter-spacing:-.01em; margin:0 0 3pt; color:var(--ink);
   }
@@ -258,6 +270,7 @@
      ============================================================ */
   @page{ size:A4; margin:0 }
   @media print{
+    .mast::before{display:none}
     :root{ --bg:#fff }
     html,body{background:#fff !important; font-size:9.2pt}
     body{-webkit-print-color-adjust:exact; print-color-adjust:exact}
@@ -298,10 +311,13 @@
 
   <!-- ===================== MASTHEAD ===================== -->
   <header class="mast">
-    <div>
+    <div class="who">
+      <svg class="seal" viewBox="0 0 64 64" aria-hidden="true"><rect x="3" y="3" width="58" height="58" rx="6" fill="#c5311d"/><rect x="7.5" y="7.5" width="49" height="49" rx="3" fill="none" stroke="#f7f5f0" stroke-width="1.6" opacity=".85"/><text x="32" y="43" text-anchor="middle" font-family="'Source Serif 4',Georgia,serif" font-weight="700" font-size="30" letter-spacing="-1" fill="#f7f5f0">RS</text></svg>
+      <div>
       <h1>Raffaele Sollecito</h1>
       <p class="title">Principal Cloud Solutions Architect &nbsp;·&nbsp; AWS Subject Matter Expert</p>
       <p class="sub">Tavira, Portugal &nbsp;·&nbsp; Remote / EU-wide engagements &nbsp;·&nbsp; Italian citizen</p>
+      </div>
     </div>
     <div class="contact">
       <a href="mailto:raffaele.sollecito@aspectsolutions.eu">raffaele.sollecito@aspectsolutions.eu</a><br />
