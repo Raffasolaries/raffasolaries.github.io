@@ -1,10 +1,8 @@
 # raffasolaries.github.io
 
+Live: https://resume.raffaelesollecito.org (GitHub Pages user site, HTTPS enforced).
+
 Personal résumé / profile page for Raffaele Sollecito — Cloud Architect, AWS SME.
-
-## Status
-
-Draft. Not yet published.
 
 ## Local preview
 
@@ -13,28 +11,26 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Publish (GitHub Pages, user site)
+## Publishing
 
-1. Create a **public** repo on the `Raffasolaries` account named exactly
-   `Raffasolaries.github.io`.
-2. Push this directory to `main`.
-3. Settings → Pages → Source: *Deploy from a branch* → `main` / `/ (root)`.
-4. Live at `https://raffasolaries.github.io`.
+Push to `main`. GitHub Pages serves the repo root; `CNAME` pins the custom domain.
+DNS: Route 53 zone `raffaelesollecito.org` (personal AWS account, profile `iamadmin`),
+record `resume` CNAME -> `raffasolaries.github.io`.
 
-### Optional custom domain
+## PDF export
 
-`www.raffaelesollecito.org` is already listed on the LinkedIn profile. To point it here,
-add a `CNAME` file containing the hostname and set the DNS records GitHub Pages requires.
+- **Download PDF** button in the toolbar, or Cmd+P in any browser.
+- `./make-pdf.sh [out.pdf]` — headless Chrome, A4, identical stylesheet.
 
 ## Content source
 
-Facts derived from `../RaffaeleSollecito_LinkedIn.pdf` (generated 30 Jul 2026),
-which is the authoritative source for roles, dates and education.
+Facts derived from `source-flowcv-2026-09-04.pdf` (FlowCV export), authoritative for roles, dates,
+education, certifications and client engagements.
 
 ## Open decisions
 
 - Simon & Schuster authorship (*Honour Bound*, 2012–2013) is present on LinkedIn but
   intentionally **omitted** from this professional page. Add back only on explicit request.
-- No photo, no phone number on the page. Email is exposed in plain text — consider a
-  contact form or obfuscation if scraping is a concern.
+- Deliberately omitted from the public page: phone numbers, street address, date of birth,
+  and named references (replaced with "available on request"). These remain in the FlowCV PDF.
 - Single page for now; split into `/about`, `/work`, `/writing` only if content grows.
