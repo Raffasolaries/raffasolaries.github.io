@@ -83,6 +83,59 @@
     .edu{flex-direction:column; gap:2px}
     .edu div:last-child{white-space:normal}
   }
+
+  /* ---------- Print / PDF ---------- */
+  .print-btn{
+    font:500 .85rem/1 JetBrains Mono, ui-monospace, monospace;
+    border:1px solid var(--accent); background:transparent; color:var(--accent);
+    padding:9px 13px; border-radius:8px; cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent); color:#fff}
+
+  @page{ size:A4; margin:14mm 14mm 16mm; }
+
+  @media print{
+    :root{
+      --bg:#fff; --panel:#fff; --line:#c9d1d9;
+      --fg:#000; --muted:#444; --accent:#0b62d6; --max:100%;
+    }
+    html,body{background:#fff !important; color:#000 !important; font-size:10.5pt}
+    body{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .wrap{max-width:none; padding:0}
+    .print-btn, .links a[href^="mailto"]:after{display:none}
+    .print-btn{display:none !important}
+
+    header{padding:0 0 10pt; border-bottom:1.5pt solid var(--accent)}
+    h1{font-size:20pt}
+    section{padding:11pt 0; border-bottom:none}
+    h2{
+      margin:0 0 8pt; color:#000; font-size:8.5pt;
+      border-bottom:.5pt solid var(--line); padding-bottom:3pt;
+    }
+    .lead{font-size:11pt}
+    p{margin:0 0 6pt}
+
+    /* keep blocks intact across page breaks */
+    .job, .card, .edu, section{ break-inside:avoid; page-break-inside:avoid }
+    h2, h3{ break-after:avoid; page-break-after:avoid }
+    .job{padding:8pt 0}
+    .job li{margin:0 0 2pt}
+
+    .card{border:.5pt solid var(--line); padding:7pt 9pt}
+    .grid{gap:7pt}
+    .tag{border:.5pt solid var(--line); padding:4pt 8pt}
+
+    /* show link targets so the PDF stays useful on paper */
+    .links{gap:6pt}
+    .links a{
+      border:none; background:none; padding:0; color:#000;
+      font-size:9pt;
+    }
+    .links a:after{content:" (" attr(href) ")"; color:var(--muted); word-break:break-all}
+    .links a[href^="mailto:"]:after{content:""}
+
+    footer{padding:8pt 0 0; border-top:.5pt solid var(--line); font-size:8pt}
+  }
 </style>
 </head>
 <body>
@@ -97,6 +150,7 @@
       <a href="https://www.linkedin.com/in/raffasolaries" rel="me noopener">LinkedIn</a>
       <a href="https://github.com/Raffasolaries" rel="me noopener">GitHub</a>
       <a href="https://www.raffaelesollecito.org" rel="me noopener">raffaelesollecito.org</a>
+      <button class="print-btn" type="button" onclick="window.print()">Download PDF</button>
     </nav>
   </div>
 </header>
