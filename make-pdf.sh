@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Render index.html to a print-quality A4 PDF using headless Chrome.
 #
-#   ./make-pdf.sh                      -> RaffaeleSollecito-Resume.pdf
+#   ./make-pdf.sh                      -> Raffaele-Sollecito-Resume.pdf (the file linked from index.html)
 #   ./make-pdf.sh /tmp/out.pdf         -> custom output path
+#   CHROME=/path/to/chrome ./make-pdf.sh  -> use a specific Chrome/Chromium binary
 #
 # Uses the same @media print stylesheet the browser's Cmd+P / "Download PDF"
 # button uses, so the CLI output and the manual export are identical.
@@ -10,18 +11,19 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-OUT="${1:-RaffaeleSollecito-Resume.pdf}"
+OUT="${1:-Raffaele-Sollecito-Resume.pdf}"
 
-CHROME=""
+BROWSER_BIN=""
 for c in \
+  "${CHROME:-}" \
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   "/Applications/Chromium.app/Contents/MacOS/Chromium" \
   "$(command -v google-chrome || true)" \
   "$(command -v chromium || true)"; do
-  [ -n "$c" ] && [ -x "$c" ] && CHROME="$c" && break
+  [ -n "$c" ] && [ -x "$c" ] && BROWSER_BIN="$c" && break
 done
 
-if [ -z "$CHROME" ]; then
+if [ -z "$BROWSER_BIN" ]; then
   echo "No Chrome/Chromium found. Open index.html and use Cmd+P -> Save as PDF." >&2
   exit 1
 fi
@@ -32,7 +34,7 @@ SRV=$!
 trap 'kill "$SRV" 2>/dev/null || true' EXIT
 sleep 1
 
-"$CHROME" \
+"$BROWSER_BIN" \
   --headless \
   --disable-gpu \
   --no-pdf-header-footer \
