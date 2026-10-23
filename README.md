@@ -31,8 +31,9 @@ record `resume` CNAME -> `raffasolaries.github.io`.
 Facts derived from `source-flowcv-2026-09-04.pdf` (FlowCV export), authoritative for roles, dates,
 education, certifications and client engagements. Updated 2026-10-23 for Kumokage GmbH, following the
 fact register of the Kumokage launch kit: four AWS certifications plus two AWS badges (SME, Partner
-accreditation), canonical Credly badge links, 10+ years in software engineering / 7+ on AWS, and the
-Verona degree as recorded by AlmaLaurea (MSc Computer Engineering, LM-32, July 2014).
+accreditation), canonical Credly badge links, 10+ years in software engineering / 7+ on AWS. Education as
+recorded by AlmaLaurea: Verona MSc Computer Engineering (LM-32 Ingegneria e Scienze Informatiche), enrolled
+2008, graduated 15 July 2014; Perugia BSc Informatica (class 26), enrolled 2003, graduated 16 February 2008.
 
 ## Content rules
 
